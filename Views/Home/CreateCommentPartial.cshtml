@@ -1,0 +1,9 @@
+@model TheWallCSharp.Models.Comment;
+<form action="/create_comment" method="POST">
+            <label for="exampleFormControlTextarea1">Post a comment:</label>
+            <textarea asp-for="Content" class="form-control" rows="2"></textarea>
+            <input type="hidden" name="UserId" value="@ViewBag.LoggedIn.UserId">
+            <br>
+            <p class="text-right"><input type="submit" value="Post a comment" class="btn btn-primary"></p>
+            <br>
+        </form>

@@ -1,0 +1,82 @@
+@model TheWallCSharp.Models.Comment;
+
+<nav class="navbar navbar-light bg-dark justify-content-between">
+    <a class="navbar-brand">The Rickbook</a>
+    <form class="form-inline">
+        <p class="navname">Welcome @ViewBag.LoggedIn.FName!</p>
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <a class="nava" href='/logout'>Logout</a>
+    </form>
+</nav>
+<div class="container inline-block">
+    <div>
+        <br>
+        <partial name="CreateMessagePartial"></partial></partial>
+        
+    </div>
+    <div class="container-fluid">
+        @foreach (var m in ViewBag.Messages)
+        {
+            <div class="display">
+            <h5>@m.Creator.FName - @m.CreatedAt</h5>
+            <p>@m.Content</p>
+            <p>Likes: @m.Likes.Count</p>
+            @if (m.UserId == ViewBag.Id)
+            {
+                <a href="/destroym/@m.MessageId">Delete</a>
+            }
+            else
+            {
+                @if(m.Likes.Count == 0)
+                {
+                    <a class="like" href="/like/@m.MessageId">Like</a>
+                }
+                else
+                {
+                    bool y = false;
+                    @foreach(var user in m.Likes)
+                    {
+                        @if(user.UserId == ViewBag.Id)
+                        {
+                            y = true;
+                        }
+                        @if(y == true)
+                        {
+                            <a class="unlike" href="/unlike/@m.MessageId">Unlike</a>
+                        }
+                        else
+                        {
+                            <a class="like" href="/like/@m.MessageId">Like</a>
+                        }
+                    }                   
+                }
+            }
+
+
+            </div>
+            
+    <div class="container-fluid">
+
+    @foreach (var c in m.Comments)
+    { 
+        <div class="container">
+            <h6>@c.CommentCreator.FName - @c.UpdatedAt</h6>
+            <p class="sp">@c.Content</p>
+            @if (c.UserId == ViewBag.Id)
+            {
+                <a class="d inline-block" href="/destroyc/@c.CommentId">Delete</a>
+            }
+        </div>
+    }
+        <form action="/create_comment/@m.MessageId" method="POST">
+            <label for="exampleFormControlTextarea1">Post a comment:</label>
+            <textarea asp-for="Content" class="form-control" rows="2"></textarea>
+            <input type="hidden" name="UserId" value="@ViewBag.LoggedIn.UserId">
+            <br>
+            <p class="text-right"><input type="submit" value="Post a comment" class="btn btn-primary"></p>
+            <br>
+        </form>
+    </div>
+    }  
+</div>

@@ -1,0 +1,8 @@
+@model TheWallCSharp.Models.Message
+<form action="/create/message" method="POST">
+    <label for="exampleFormControlTextarea1">What's on your mind @ViewBag.LoggedIn.FName?</label>
+    <textarea asp-for="Content" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <input type="hidden" name="UserId" value="@ViewBag.LoggedIn.UserId">
+    <br>
+    <p class="text-right"><input type="submit" value="Post a message" class="btn btn-primary"></p>
+</form>
