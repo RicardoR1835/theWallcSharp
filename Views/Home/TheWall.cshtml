@@ -1,5 +1,4 @@
 @model TheWallCSharp.Models.Comment;
-
 <nav class="navbar navbar-light bg-dark justify-content-between">
     <a class="navbar-brand">The Rickbook</a>
     <form class="form-inline">
@@ -9,7 +8,8 @@
         <a class="nava" href='/logout'>Logout</a>
     </form>
 </nav>
-<div class="container inline-block">
+
+<div class="container inline-block holder">
     <div>
         <br>
         <partial name="CreateMessagePartial"></partial></partial>
@@ -41,15 +41,15 @@
                         {
                             y = true;
                         }
-                        @if(y == true)
+                    }
+                    @if(y == true)
                         {
                             <a class="unlike" href="/unlike/@m.MessageId">Unlike</a>
                         }
                         else
                         {
                             <a class="like" href="/like/@m.MessageId">Like</a>
-                        }
-                    }                   
+                        }                   
                 }
             }
 

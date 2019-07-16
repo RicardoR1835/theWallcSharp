@@ -1,8 +1,6 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification\ 
 for details on configuring this project to bundle and minify static web assets. */
 body {
-    padding-top: 50px;
-    padding-bottom: 20px;
     background-color: #110e16;
     color: aliceblue;
 }
@@ -10,6 +8,14 @@ body {
 .registration {
     width: 45%;
     display: inline-block;
+}
+
+.holder {
+    margin: 0 auto;
+}
+
+nav {
+    width: 100%;
 }
 
 .login {

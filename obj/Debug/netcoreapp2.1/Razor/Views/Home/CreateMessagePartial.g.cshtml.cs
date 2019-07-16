@@ -57,7 +57,7 @@ using TheWallCSharp.Models;
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
             BeginContext(36, 439, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "78863f0032fe4d58bb4fb3e2cdfcc1b5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "91d7605cdba94ee1a0e7a9b3d86a341a", async() => {
                 BeginContext(81, 66, true);
                 WriteLiteral("\n    <label for=\"exampleFormControlTextarea1\">What\'s on your mind ");
                 EndContext();
@@ -72,7 +72,7 @@ using TheWallCSharp.Models;
                 WriteLiteral("?</label>\n    ");
                 EndContext();
                 BeginContext(184, 102, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "716c2e012f734a27996853fa2b0b3d08", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("textarea", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "65becfe198f04dc69282ba0cf1e52ae0", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_TextAreaTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.TextAreaTagHelper>();

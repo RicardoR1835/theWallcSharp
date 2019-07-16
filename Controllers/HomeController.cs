@@ -40,12 +40,12 @@ namespace TheWallCSharp.Controllers
                 else
                 {
                     Console.WriteLine(newUser.UserId);
-                    HttpContext.Session.SetInt32("Id", newUser.UserId);
                     PasswordHasher<User> Hasher = new PasswordHasher<User>();
                     newUser.Password = Hasher.HashPassword(newUser, newUser.Password); 
                     dbContext.Add(newUser);
                     dbContext.SaveChanges();
                     Console.WriteLine(newUser.UserId);
+                    HttpContext.Session.SetInt32("Id", newUser.UserId);
                     return Redirect($"dash/{HttpContext.Session.GetInt32("Id")}");
                 }
             }
